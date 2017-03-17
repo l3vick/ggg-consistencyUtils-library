@@ -1,5 +1,6 @@
-package com.example;
+package com.gigigo;
 
+import com.gigigo.consistency.ConsistencyUtils;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Test;

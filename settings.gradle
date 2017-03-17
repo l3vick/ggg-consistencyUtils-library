@@ -1,1 +1,1 @@
-include ':app', ':isemptylib'
+include ':app', ':consistency'

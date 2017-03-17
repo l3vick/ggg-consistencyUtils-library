@@ -1,9 +1,7 @@
-package com.example;
+package com.gigigo.consistency;
 
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.Map;
-import javax.management.relation.Role;
 
 public class ConsistencyUtils {
 

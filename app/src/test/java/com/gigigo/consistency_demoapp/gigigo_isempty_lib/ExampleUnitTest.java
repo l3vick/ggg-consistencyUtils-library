@@ -1,4 +1,4 @@
-package com.example.pablorojas.gigigo_isempty_lib;
+package com.gigigo.consistency_demoapp.gigigo_isempty_lib;
 
 import org.junit.Test;
 

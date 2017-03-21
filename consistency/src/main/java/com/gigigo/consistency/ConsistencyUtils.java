@@ -36,26 +36,23 @@ public class ConsistencyUtils {
 
   public static boolean hasCollectionItemNull(Collection collection) {
     boolean response = false;
-    String str = null;
     Iterator iterator = collection.iterator();
     while (iterator.hasNext()) {
       Object obj = iterator.next();
-      if (obj == null){
+      if (obj == null) {
         response = true;
       }
     }
     return response;
   }
 
-
-  public static boolean isCollectionEmpty(Collection collection){
+  public static boolean isCollectionEmpty(Collection collection) {
     boolean response = false;
-    if (!hasCollectionItemNull(collection)){
-      if (collection.isEmpty()){
+    if (!hasCollectionItemNull(collection)) {
+      if (collection.isEmpty()) {
         response = true;
       }
     }
     return response;
   }
-
 }

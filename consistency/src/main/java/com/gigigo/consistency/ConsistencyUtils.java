@@ -45,11 +45,29 @@ public class ConsistencyUtils {
 
   public static boolean isCollectionEmpty(Collection collection) {
     boolean response = false;
-    if (!hasCollectionNullItem(collection)) {
       if (collection.isEmpty()) {
         response = true;
       }
+    return response;
+  }
+
+  public static boolean isCollectionFullOfNullItems(Collection collection){
+    boolean response = false;
+    int nullCounter = 0;
+    Iterator iterator = collection.iterator();
+    if(!isCollectionEmpty(collection)){
+        while (iterator.hasNext()){
+          Object obj = iterator.next();
+          if (obj == null) {
+            nullCounter++;
+          }
+        }
+        if (nullCounter == collection.size()){
+          response = true;
+        }
     }
     return response;
   }
+
+
 }

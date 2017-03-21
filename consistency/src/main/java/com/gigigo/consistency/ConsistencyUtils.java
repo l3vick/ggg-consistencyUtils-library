@@ -5,9 +5,6 @@ import java.util.Iterator;
 
 public class ConsistencyUtils {
 
-  private ConsistencyUtils() {
-  }
-
   public static boolean isObjectNull(Object obj) {
     boolean response = false;
     if (obj == null) {
@@ -34,7 +31,7 @@ public class ConsistencyUtils {
     }
   }
 
-  public static boolean hasCollectionItemNull(Collection collection) {
+  public static boolean hasCollectionNullItem(Collection collection) {
     boolean response = false;
     Iterator iterator = collection.iterator();
     while (iterator.hasNext()) {
@@ -48,7 +45,7 @@ public class ConsistencyUtils {
 
   public static boolean isCollectionEmpty(Collection collection) {
     boolean response = false;
-    if (!hasCollectionItemNull(collection)) {
+    if (!hasCollectionNullItem(collection)) {
       if (collection.isEmpty()) {
         response = true;
       }

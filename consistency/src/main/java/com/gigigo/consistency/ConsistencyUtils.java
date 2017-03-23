@@ -5,22 +5,22 @@ import java.util.Iterator;
 
 public class ConsistencyUtils {
 
-  public static boolean isObjectNull(Object obj) {
-    boolean response = false;
-    if (obj == null) {
-      response = true;
+  public static boolean isObjectNull(Object object) {
+    boolean isNull = false;
+    if (object == null) {
+      isNull = true;
     }
-    return response;
+    return isNull;
   }
 
-  public static boolean isStringEmpty(String str) {
-    boolean response = false;
-    if (!isObjectNull(str)) {
-      if (str.trim().equals("")) {
-        response = true;
+  public static boolean isStringEmpty(String string) {
+    boolean isEmpty = false;
+    if (!isObjectNull(string)) {
+      if (string.trim().equals("")) {
+        isEmpty = true;
       }
     }
-    return response;
+    return isEmpty;
   }
 
   public static <T> boolean isInstanceOf(Object obj, Class<T> type) {
@@ -32,15 +32,15 @@ public class ConsistencyUtils {
   }
 
   public static boolean hasCollectionNullItem(Collection collection) {
-    boolean response = false;
+    boolean hasNull = false;
     Iterator iterator = collection.iterator();
-    while (iterator.hasNext()) {
-      Object obj = iterator.next();
-      if (obj == null) {
-        response = true;
+    while (iterator.hasNext() && !hasNull) {
+      Object object = iterator.next();
+      if (object == null) {
+        hasNull = true;
       }
     }
-    return response;
+    return hasNull;
   }
 
   public static boolean isCollectionEmpty(Collection collection) {
@@ -51,8 +51,8 @@ public class ConsistencyUtils {
       response = true;
     } else {
       while (iterator.hasNext()) {
-        Object obj = iterator.next();
-        if (obj == null) {
+        Object object = iterator.next();
+        if (object == null) {
           nullCounter++;
         }
       }

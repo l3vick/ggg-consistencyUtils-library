@@ -44,22 +44,14 @@ public class ConsistencyUtils {
   }
 
   public static boolean isCollectionEmpty(Collection collection) {
-    boolean response = false;
-    int nullCounter = 0;
+    boolean isEmpty = true;
     Iterator iterator = collection.iterator();
-    if (collection.isEmpty()) {
-      response = true;
-    } else {
-      while (iterator.hasNext()) {
-        Object object = iterator.next();
-        if (object == null) {
-          nullCounter++;
-        }
-      }
-      if (nullCounter == collection.size()) {
-        response = true;
+    while (iterator.hasNext() && isEmpty) {
+      Object object = iterator.next();
+      if (object != null) {
+        isEmpty = false;
       }
     }
-    return response;
+    return isEmpty;
   }
 }

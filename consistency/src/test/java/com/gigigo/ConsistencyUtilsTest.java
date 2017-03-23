@@ -69,6 +69,7 @@ public class ConsistencyUtilsTest {
     assertEquals(false, hasItemNull);
   }
 
+
   @Test public void testIsCollectionEmptyWhenCollectionEmptyReturnTrue() {
     List collection = new ArrayList();
     boolean isEmpty = ConsistencyUtils.isCollectionEmpty(collection);
@@ -82,12 +83,14 @@ public class ConsistencyUtilsTest {
     assertEquals(false, isEmpty);
   }
 
-  @Test public void isCollectionEmptyWithNullItemReturnFalse() {
+  @Test public void isCollectionEmptyWithNullItemReturnTrue() {
     List collection = new ArrayList();
     collection.add(null);
+    collection.add(null);
     boolean isEmpty = ConsistencyUtils.isCollectionEmpty(collection);
-    assertEquals(false, isEmpty);
+    assertEquals(true, isEmpty);
   }
+
 
   public class OtherObject {
 
